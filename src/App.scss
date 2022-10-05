@@ -1,0 +1,17 @@
+// SASS
+$chocolate: chocolate;
+
+// CSS
+// --text-color: black;
+
+.App {
+	text-align: center;
+
+	ul {
+		background-color: $chocolate;
+
+		li {
+			font-size: 30px;
+		}
+	}
+}
