@@ -1,38 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import './App.scss';
-import FormularioTarefa from './FormularioTarefa';
+import React, { useState } from "react";
+import "./App.scss";
+import { Title } from "./styles";
+import FormularioTarefa from "./FormularioTarefa";
 
 function App() {
-  const [tarefas, setTarefas] = useState(['passar ferro', 'lavar louça'])
-  const [tamanho, setTamanho] = useState(2)
-
-  useEffect(() => {
-    setTamanho(tarefas.length)
-  
-    return () => {
-      console.log("componente acabou")
-    }
-  }, [tarefas, setTamanho])
+  const [novaTarefa, setNovaTarefa] = useState("");
+  const [tarefas, setTarefas] = useState([
+    "preparar talk",
+    "encomendar comida cão",
+  ]);
 
   function removerTarefa() {
-    let tarefasTemp = [...tarefas]
-    tarefasTemp.pop()
-    setTarefas(tarefasTemp)
+    let tarefasTemp = [...tarefas];
+    tarefasTemp.pop();
+    setTarefas(tarefasTemp);
   }
 
   return (
     <div className="App">
+      <Title>TODO List</Title>
       <FormularioTarefa
-        onTarefaAdicionada={() => setTarefas([...tarefas, 'lavar roupa'])}
+        onNovaTarefa={(e) => setNovaTarefa(e.target.value)}
+        onTarefaAdicionada={() => setTarefas([...tarefas, novaTarefa])}
         onTarefaRemovida={() => removerTarefa()}
       />
-      <p>{tamanho}</p>
+
       <ul>
-        {
-          tarefas.map(
-            (tarefa, key) => <li key={key}>{tarefa}</li>
-          )
-        }
+        {tarefas.map((tarefa, key) => (
+          <li key={key}>{tarefa}</li>
+        ))}
       </ul>
     </div>
   );

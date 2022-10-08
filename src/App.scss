@@ -5,13 +5,17 @@ $chocolate: chocolate;
 // --text-color: black;
 
 .App {
-	text-align: center;
+  text-align: center;
+  max-width: 700px;
+  margin: 100px auto 0;
 
-	ul {
-		background-color: $chocolate;
+  ul {
+    color: $chocolate;
 
-		li {
-			font-size: 30px;
-		}
-	}
+    li {
+      font-size: 18px;
+      line-height: 1.4;
+      list-style-position: inside;
+    }
+  }
 }
