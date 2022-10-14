@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./App.scss";
-import { Title } from "./styles";
-import FormularioTarefa from "./FormularioTarefa";
+import "./index.scss";
+import { Title } from "../styles.js";
+import FormularioTarefa from "../FormularioTarefa";
 
 function App() {
   const [novaTarefa, setNovaTarefa] = useState("");
