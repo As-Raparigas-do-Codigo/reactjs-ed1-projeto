@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import "./index.scss";
-import { Title } from "../styles.js";
+import { Title } from "../../styles.js";
 import FormularioTarefa from "../FormularioTarefa";
 
 function App() {
   const [novaTarefa, setNovaTarefa] = useState("");
-  const [tarefas, setTarefas] = useState([
-    "preparar talk",
-    "encomendar comida cão",
-  ]);
+  const [tarefas, setTarefas] = useState([]);
 
   function removerTarefa() {
     let tarefasTemp = [...tarefas];

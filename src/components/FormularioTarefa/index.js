@@ -1,5 +1,5 @@
 import Botao from "../Botao";
-import { buttonsMap } from "../styles";
+import { buttonsMap } from "../../styles";
 
 function FormularioTarefa({
   onTarefaAdicionada,
